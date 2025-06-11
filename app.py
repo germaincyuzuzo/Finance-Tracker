@@ -19,7 +19,7 @@ def index():
     return render_template('index.html', incomes=incomes, expenses=expenses)
 
 
-@app.route('/add', methods=['GET', 'POST'])
+@app.route('/add_entry', methods=['GET', 'POST'])
 
 def add_entry():
     if request.method == 'POST':
@@ -53,6 +53,11 @@ def add_entry():
         return redirect(url_for('index'))
     
     return render_template ('add_entry.html')
+
+@app.route('/delete_entry', methods=['GET', 'POST'])
+
+def delete_entry():
+    pass
 
 if __name__ == '__main__':
     app.run(debug=True)
